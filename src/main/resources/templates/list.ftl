@@ -31,7 +31,7 @@
 	                    <div class="form-group col-md-12">
 	                        <label class="col-md-2 control-lable" for="creditLimit">Limit</label>
 	                        <div class="col-md-7">
-	                            <input type="number" ng-model="ctrl.user.creditLimit" id="creditLimit" class="form-control input-sm" placeholder="Enter Credit Card Limit." required ng-pattern="ctrl.onlyNumbers"/>
+	                            <input type="number" ng-model="ctrl.user.creditLimit" id="creditLimit" class="form-control input-sm" placeholder="Enter Credit Card Limit (£)" required ng-pattern="ctrl.onlyNumbers"/>
 	                        </div>
 	                    </div>
 	                </div>
@@ -67,8 +67,8 @@
 		            <tr ng-repeat="u in ctrl.getAllUsers()">
 		                <td>{{u.name}}</td>
                         <td>{{u.creditCardNumber}}</td>
-                        <td>{{u.remainingCredit}}</td>
-                        <td>{{u.creditLimit}}</td>
+                        <td>£ {{u.remainingCredit}}</td>
+                        <td>£ {{u.creditLimit}}</td>
 		            </tr>
 		            </tbody>
 		        </table>

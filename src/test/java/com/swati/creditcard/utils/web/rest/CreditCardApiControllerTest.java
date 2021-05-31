@@ -54,8 +54,7 @@ public class CreditCardApiControllerTest {
         mockMvc = MockMvcBuilders.standaloneSetup(creditCardApiController).build();
         objectMapper = new ObjectMapper();
     }
-
-    @Ignore
+    
     @Test
     public void retrieve_all_creditcards() throws Exception {
 
@@ -69,7 +68,7 @@ public class CreditCardApiControllerTest {
 
         final List<CreditCardBean> creditCardBeans = objectMapper.readValue(contentResponse, new TypeReference<List<CreditCardBean>>() {
         });
-        Assert.assertEquals("", contentResponse);
+        Assert.assertEquals("[]", contentResponse);
         Assert.assertEquals(0, creditCardBeans.size());
     }
 
