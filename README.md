@@ -12,12 +12,9 @@ In a logical multilayer architecture with an object-oriented design, the followi
  - Data access layer (this is the persistence layer, logging, networking, and other services which are required to support a particular business layer)
 
 
-The client is a simple Angular UX : 
+User Interface : 
+<img width="1184" alt="Screenshot 2021-05-31 at 18 26 04" src="https://user-images.githubusercontent.com/85080220/120225866-f1c5d580-c23d-11eb-80fd-29ff36fc9eaf.png">
 
- <img width="1194" alt="Screenshot 2021-05-31 at 13 04 52" src="https://user-images.githubusercontent.com/85080220/120199930-ab5f7f00-c21b-11eb-8f98-7f98b0b6d47e.png">
-    
-The test has been designed with the intent to showcase the implementation of some useful NFR 
-(non functional requirements) as well as provide the expected results, of course.
 
 ## Features
 
@@ -33,18 +30,9 @@ The application supports :
 ### Swagger URL and definition : 
 
     http://localhost:8080/swagger-ui.html
+    
+<img width="1001" alt="Screenshot 2021-05-31 at 18 26 44" src="https://user-images.githubusercontent.com/85080220/120226143-86303800-c23e-11eb-9866-70a1d8512a00.png">
 
-### Error and Logging aspect: each method is traced with its actual parameters
-
-* The design comprises of the following :
-
-    - Java 8
-    - controller layer spring MVC with RestControllers
-    - service layer
-    - spring data repositories
-    - hibernate persistence
-    - DTO beans for rest i/o
-    - Mapper to convert entity<->dto
 
 ### Installation : 
 
@@ -109,20 +97,22 @@ or
 ### Create a valid credit card add request
 
     curl --request POST  --url http://localhost:8080/creditcards \
-	--header 'content-type: application/json'  --header 'Accept: application/json' \
-	--data '{"creditCardNumber":"5038569482088860","name":"Monica","creditLimit":1000}'
+         --header 'content-type: application/json'  --header 'Accept: application/json' \
+         --data '{"creditCardNumber":"6374467634328732","name":"Monica Geller","creditLimit":1000}'	
 
     {
-        "creditCardNumber":"5497083002781388334",
-        "name":"antonio","creditLimit":1000,
-        "remainingCredit":1000
+        "creditCardNumber": "6374467634328732",
+        "name": "Monica Geller",
+        "creditLimit": 1000.0,
+        "remainingCredit": 0.0
     }
+    
 
 ### Create an invalid Luhn 10 credit card request
 
     curl --request POST  --url http://localhost:8080/creditcards \
-	--header 'content-type: application/json'  --header 'Accept: application/json' \
-	--data '{"creditCardNumber":"0000873475611998302","name":"Rachel","creditLimit":2000}'
+	 --header 'content-type: application/json'  --header 'Accept: application/json' \
+	 --data '{"creditCardNumber":"0000873475611998302","name":"Rachel Green","creditLimit":2000}'
      
      {
        "message" : "Credit card number is not valid"
@@ -135,7 +125,9 @@ or
     
 
 ## Limitations and Scope for Improvements
-   This application is not in a production ready state. 
+   - This application is not in a production ready state. 
+   - Basic tests have been designed with the intent to showcase the implementation of some useful functional and non-functional requirements. But surely there is room to add a comprehensive suite of tests.
+   - Error messages can be improved.
    
  
     
