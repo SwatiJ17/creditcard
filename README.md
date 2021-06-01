@@ -75,7 +75,7 @@ or
     The simplest way to run the app is by using the Spring-boot maven plugin:
     ./mvnw spring-boot:run
   
-### Builing and running in docker :
+### Building and running in docker :
 
     docker build -t swati/credit-card . 
     docker run -p 8080:8080 swati/credit-card
