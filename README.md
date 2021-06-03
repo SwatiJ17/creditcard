@@ -19,7 +19,7 @@ User Interface :
 ## Features
 
 The application supports :
- 1. Adding/creating new credit card in the system by taking name, card number, and limit(optional) from the user
+ 1. Adding/creating new credit card in the system by taking name, card number, and limit from the user
     - Card numbers are validated using Luhn 10 Algorithm
     - New cards start with a £0 balance
     - For card numbers in-compatible with Luhn 10, error is returned.
